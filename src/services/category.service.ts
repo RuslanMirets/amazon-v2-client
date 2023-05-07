@@ -1,5 +1,3 @@
-import axios from "axios";
-import Cookies from "js-cookie";
 import { ICategory } from "@/types/category.interface";
 import { instance } from "@/api/api.interceptor";
 
