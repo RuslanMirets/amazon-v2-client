@@ -1,13 +1,7 @@
-import { url } from "inspector";
 import { IPaymentResponse } from "@/types/payment.interface";
 import { instance } from "@/api/api.interceptor";
 
 const PAYMENT = "payment";
-
-type TypeData = {
-	rating: number;
-	text: string;
-};
 
 export const PaymentService = {
 	async createPayment(amount: number) {
