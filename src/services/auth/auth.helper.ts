@@ -10,7 +10,7 @@ export const getUserFromStorage = () => {
 	return JSON.parse(localStorage.getItem("user") || "{}");
 };
 
-export const saveTokenStorage = (data: ITokens) => {
+export const saveTokensStorage = (data: ITokens) => {
 	Cookies.set("accessToken", data.accessToken);
 	Cookies.set("refreshToken", data.refreshToken);
 };
@@ -22,6 +22,6 @@ export const removeFromStorage = () => {
 };
 
 export const saveToStorage = (data: IAuthResponse) => {
-	saveToStorage(data);
+	saveTokensStorage(data);
 	localStorage.setItem("user", JSON.stringify(data.user));
 };
