@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { FC } from "react";
 import { IProduct } from "@/types/product.interface";
+import AddToCartButton from "./AddToCartButton";
+import FavoriteButton from "./FavoriteButton";
+import ProductRating from "./ProductRating";
 
 const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 	return (
 		<div>
 			<div>
 				<FavoriteButton productId={product.id} />
-				<AddToCartButton productId={product.id} />
+				<AddToCartButton product={product} />
 				<Image
 					src={product.images[0]}
 					width={300}
@@ -17,7 +20,7 @@ const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 			</div>
 			<h3>{product.name}</h3>
 			<div>{product.category.name}</div>
-			<ProductRating rating={product.rating} />
+			<ProductRating product={product} />
 			<div>{product.price}</div>
 		</div>
 	);
